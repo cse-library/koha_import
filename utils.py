@@ -19,6 +19,9 @@ def get_type(string):
 
 def str_sql_refactor(string):
     result = ""
-    result=string.encode("utf-8").replace('"', '\\"')
+    try:
+        result=string.encode("utf-8").replace('"', '\\"')
+    except:
+        result=string.replace('"', '\\"')
     result=result.replace("'", "\\'")
     return result

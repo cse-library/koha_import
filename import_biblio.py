@@ -26,7 +26,7 @@ for row in data:
         continue
     row4=str_sql_refactor(row[4])
     row2=str_sql_refactor(row[2])
-    query += """(%d,'BMN','%s','%s',NULL,'không',NULL,NULL,0,'2018-11-10 04:33:21','2018-11-09','%s'),"""%(int(row[0]), row4, row2, row2)
+    query += """(%d,'BMN','%s','%s',NULL,NULL,'0',NULL,NULL,'2018-11-10 04:33:21','2018-11-09',NULL),"""%(int(row[0]), row4, row2)
 if query.endswith(','):
     query = query[:len(query)-1]
     query += ';'

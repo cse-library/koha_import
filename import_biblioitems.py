@@ -20,14 +20,14 @@ query = """INSERT INTO biblioitems"""
 i = 0
 for row in data:
     if i == 0:
-        query += 'VALUES'
+        query += ' VALUES '
         i += 1
         continue
     # default 999 pages
     row7 = get_type(row[7])
     #print row
     row3=row[3] if row[3].encode('utf-8') else ""
-    query += """(%d,%d,%s,NULL,'%s','111111','111111',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-11-10 02:35:23',NULL,'999',NULL,'18x30','VN',NULL,NULL,'lcc',NULL,NULL,NULL,'',NULL,NULL),"""%(int(row[0]), int(row[0]), row3, row7)
+    query += """(%d,%d,'%s',NULL,'%s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-11-10 02:35:23',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL),"""%(int(row[0]), int(row[0]), row3, row7)
 if query.endswith(','):
     query = query[:len(query)-1]
     query += ';'

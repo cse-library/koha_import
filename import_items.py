@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from xlrd import open_workbook
+import re
+from utils import *
 
 
 wb = open_workbook('data.xlsx')
@@ -16,42 +18,55 @@ for s in wb.sheets():
         values.append(col_value)
 data = values
 
-query = """INSERT INTO items ( itemnumber, biblionumber, biblioitemnumber, barcode, homebranch, notforloan, damaged, itemlost, withdrawn, coded_location_qualifier, restricted, location, permanent_location, itype) """
+query = """INSERT INTO items"""
 i = 0
+bacode_tmp = 5555555555
 for row in data:
     if i == 0:
-        query += 'VALUES'
+        query += ' VALUES '
         i += 1
         continue
-    #print str(row[7])
-    more_subfields_xml = """ <?xml version="1.0" encoding="UTF-8"?>
-<collection
+    barcode = ""
+    if row[6] != "":
+        if ';' in row[6]:
+            barcode_list = row[6].split(';')
+            barcode = str(barcode_list[0])
+        if ',' in barcode:
+            barcode_list = row[6].split(',')
+            barcode = barcode_list[0]
+        elif " " in barcode:
+            barcode_list = row[6].split(' ')
+            barcode = barcode_list[0]
+        elif "\n" in barcode:
+            barcode_list = row[6].split('\n')
+            barcode = barcode_list[0]
+        if barcode == "":
+            barcode = str(bacode_tmp)
+            bacode_tmp += 1
+        elif barcode in query:
+            barcode = str(bacode_tmp)
+            bacode_tmp += 1
+    row7 = get_type(row[7])
+    more_subfields_xml = """<collection
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd"
   xmlns="http://www.loc.gov/MARC21/slim">
 
 <record>
-  <leader> </leader>
-  <datafield tag="" ind1=" " ind2=" ">
-    <subfield code="f">%s</subfield>
-    <subfield code="f">%s</subfield>
-    <subfield code="x"></subfield>
-    <subfield code="x"></subfield>
+  <leader>         a              </leader>
+  <datafield tag="999" ind1=" " ind2=" ">
+    <subfield code="f">" "</subfield>
   </datafield>
 </record>
 
-</collection>
-               enumchron: NULL
-              copynumber: NULL
-             stocknumber: NULL
-              new_status: NULL"""
-    query += """(4,2,2,'002','2018-11-09',NULL,'CLIB',100000.00,200000.00,'2018-11-09',NULL,'2018-11-09',NULL,-1,1,NULL,3,NULL,1,NULL,'111 Tâm lý','Cơ sở 1_A5',NULL,NULL,NULL,NULL,'Mọi đối tượng đều đọc được sách','Sách đã được thu hồi','CLIB',NULL,'2018-11-10 05:22:21','CART','CART',NULL,'ddc','111_000000000000000_TÂM_LÝ','FIC','Sách online chia sẻ free trên cộng đồng mạng','000','VH','<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<collection\n  xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n  xsi:schemaLocation=\"http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd\"\n  xmlns=\"http://www.loc.gov/MARC21/slim\">\n\n<record>\n  <leader>         a              </leader>\n  <datafield tag=\"999\" ind1=\" \" ind2=\" \">\n    <subfield code=\"f\">Cơ sở 1_A5_11</subfield>\n    <subfield code=\"x\">Sách đã được thu hồi</subfield>\n  </datafield>\n</record>\n\n</collection>',NULL,'000',NULL,NULL)"""
-    
-    query += """(%d, %d, %d, "%s", "%s", %d, %d, %d, %d, "%s", %d, "%s", "%s", "%s" ),"""%(int(row[0]), int(row[0]), int(row[0]), row[6], "CLIB", -1, 1, 1, 1, row[7] if row[7] else "", 1, "CART", "CART", row[1])
+</collection>"""
+    more_subfields_xml = str_sql_refactor(more_subfields_xml) 
+    query += """(%d,%d,%d,'%s','2018-11-09',NULL,'CLIB',0.00,0.00,'2018-11-09',NULL,'2018-11-09',NULL,-1,1,NULL,3,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CLIB',NULL,'2018-11-10 05:22:21','CART','CART',NULL,NULL,NULL,'FIC',NULL,'000','%s','%s',NULL,'0',NULL,NULL),"""%(int(row[0]), int(row[0]), int(row[0]), barcode, row7, more_subfields_xml)
 #print data
 if query.endswith(','):
     query = query[:len(query)-1]
     query += ';'
 #print query
-with open('items.sql', 'w') as filehandle:  
-    filehandle.write(query.encode('utf-8'))
+import codecs
+with codecs.open('witems.sql', 'w', encoding='utf8') as filehandle:
+    filehandle.write(query)
