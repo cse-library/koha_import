@@ -1,4 +1,7 @@
+# -*- coding: utf-8 -*
 from xlrd import open_workbook
+
+from utils import str_sql_refactor
 
 wb = open_workbook('data.xlsx')
 
@@ -14,18 +17,16 @@ for s in wb.sheets():
         values.append(col_value)
 data = values
 
-query = """INSERT INTO biblio ( biblionumber, frameworkcode, author, title, datecreated ) """
+query = """INSERT INTO biblio"""
 i = 0
 for row in data:
     if i == 0:
-        query += 'VALUES'
+        query += ' VALUES '
         i += 1
         continue
-    row4=row[4].encode("utf-8").replace('"', '\\"')
-    row4=row4.replace("'", "\\'")
-    row2=row[2].encode("utf-8")
-    row2=row2.replace("'", "\\'")
-    query += """(%d, '%s', '%s', '%s', '1970-01-01 00:00:00' ),"""%(int(row[0]), "BMN", row4, row2)
+    row4=str_sql_refactor(row[4])
+    row2=str_sql_refactor(row[2])
+    query += """(%d,'BMN','%s','%s',NULL,'không',NULL,NULL,0,'2018-11-10 04:33:21','2018-11-09','%s'),"""%(int(row[0]), row4, row2, row2)
 if query.endswith(','):
     query = query[:len(query)-1]
     query += ';'
