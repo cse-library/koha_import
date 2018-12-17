@@ -31,7 +31,7 @@ for row in data:
         if ';' in row[6]:
             barcode_list = row[6].split(';')
             barcode = str(barcode_list[0])
-        if ',' in barcode:
+        elif ',' in barcode:
             barcode_list = row[6].split(',')
             barcode = barcode_list[0]
         elif " " in barcode:
@@ -40,6 +40,8 @@ for row in data:
         elif "\n" in barcode:
             barcode_list = row[6].split('\n')
             barcode = barcode_list[0]
+        else:
+            barcode = row[6]
         if barcode == "":
             barcode = str(bacode_tmp)
             bacode_tmp += 1
