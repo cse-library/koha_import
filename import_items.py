@@ -62,7 +62,7 @@ for row in data:
 </record>
 
 </collection>"""
-    more_subfields_xml = str_sql_refactor(more_subfields_xml) 
+    more_subfields_xml = ""#str_sql_refactor(more_subfields_xml) 
     query += """(%d,%d,%d,'%s','2018-11-09',NULL,'CLIB',0.00,0.00,'2018-11-09',NULL,'2018-11-09',NULL,-1,1,NULL,3,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CLIB',NULL,'2018-11-10 05:22:21','CART','CART',NULL,NULL,NULL,'FIC',NULL,'000','%s','%s',NULL,'0',NULL,NULL),"""%(int(row[0]), int(row[0]), int(row[0]), barcode, row7, more_subfields_xml)
 #print data
 if query.endswith(','):
