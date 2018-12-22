@@ -17,12 +17,13 @@ for s in wb.sheets():
 data = values
 
 query = """INSERT INTO biblioitems"""
-i = 0
-for row in data:
+for i,row in enumerate(data):
     if i == 0:
         query += ' VALUES '
         i += 1
         continue
+    elif i > 100:
+        break
     # default 999 pages
     row7 = get_type(row[7])
     #print row
@@ -33,6 +34,6 @@ if query.endswith(','):
     query += ';'
 #print query
 import codecs
-with codecs.open('biblioitems.sql', 'w', encoding='utf8') as filehandle:
+with codecs.open('100_biblioitems.sql', 'w', encoding='utf8') as filehandle:
     filehandle.write(query)
 

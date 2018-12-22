@@ -19,13 +19,13 @@ for s in wb.sheets():
 data = values
 
 query = """INSERT INTO items"""
-i = 0
-bacode_tmp = 5555555555
-for row in data:
+bacode_tmp = 5555551000
+for i,row in enumerate(data):
     if i == 0:
         query += ' VALUES '
-        i += 1
         continue
+    elif i >100:
+        break
     barcode = ""
     if row[6] != "":
         if ';' in row[6]:
@@ -70,5 +70,5 @@ if query.endswith(','):
     query += ';'
 #print query
 import codecs
-with codecs.open('witems.sql', 'w', encoding='utf8') as filehandle:
+with codecs.open('100_witems.sql', 'w', encoding='utf8') as filehandle:
     filehandle.write(query)

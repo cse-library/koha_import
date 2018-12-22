@@ -17,13 +17,14 @@ for s in wb.sheets():
         values.append(col_value)
 data = values
 
-query = """INSERT INTO biblio_metadata"""
-i = 0
-for row in data:
+#query = """INSERT INTO biblio_metadata"""
+query = ""
+for i,row in enumerate(data):
     if i == 0:
-        query += ' VALUES '
-        i += 1
+        #query += ' VALUES '
         continue
+    elif i> 100:
+        break
     idd = int(row[0])
     title=str_sql_refactor(row[2])
     khpl = str_sql_refactor(row[1])
@@ -91,10 +92,12 @@ for row in data:
 
     #(idd, idd, khpl, author, title, typee)
     metadata = str_sql_refactor(metadata)
-    query += """(%d,%d,'marcxml','MARC21','%s','2018-11-10 04:33:21'),"""%(int(row[0]), int(row[0]), metadata)
-if query.endswith(','):
-    query = query[:len(query)-1]
-    query += ';'
+    query += """INSERT INTO biblio_metadata VALUES """
+    query += """(%d,%d,'marcxml','MARC21','%s','2018-11-10 04:33:21');"""%(int(row[0]), int(row[0]), metadata)
+    query += "\n"
+# if query.endswith(','):
+#    query = query[:len(query)-1]
+#    query += ';'
 #print query
-with open('metadata.sql', 'w') as filehandle:  
+with open('100_metadata.sql', 'w') as filehandle:  
     filehandle.write(query)
