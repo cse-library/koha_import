@@ -2,7 +2,7 @@
 import xlsxwriter
 import json
 
-workbook = xlsxwriter.Workbook('books.xlsx')
+workbook = xlsxwriter.Workbook('books_part0.xlsx')
 worksheet = workbook.add_worksheet()
 
 array = None
@@ -11,7 +11,7 @@ data = filee.readline()
 array = json.loads(data)
 
 for row, data in enumerate(array):
-    for col, cel in enumerate(data): 
-        worksheet.write(row, col, cel)
-
+    if row > 0 and row <= 10000:
+        for col, cel in enumerate(data): 
+            worksheet.write(row, col, cel)
 workbook.close()

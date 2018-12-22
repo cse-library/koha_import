@@ -58,7 +58,7 @@ INSERT INTO items VALUES (1,1,1,'5551','2018-11-09',NULL,'CLIB',0.00,0.00,'2018-
   </datafield>
 </record>
 
-</collection>',NULL,'0',NULL,NULL),(6,6,6,'20173','2018-11-09',NULL,'CLIB',0.00,0.00,'2018-11-09',NULL,'2018-11-09',NULL,-1,1,NULL,3,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CLIB',NULL,'2018-11-10 05:22:21','CART','CART',NULL,NULL,NULL,'FIC',NULL,'000','SNvH','<collection
+</collection>',NULL,'0',NULL,NULL),(6,6,6,'20173','2018-11-09',5555551111,'CLIB',0.00,0.00,'2018-11-09',NULL,'2018-11-09',NULL,-1,1,NULL,3,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CLIB',NULL,'2018-11-10 05:22:21','CART','CART',NULL,NULL,NULL,'FIC',NULL,'000','SNvH','<collection
   xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
   xsi:schemaLocation=\"http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd\"
   xmlns=\"http://www.loc.gov/MARC21/slim\">
@@ -70,7 +70,7 @@ INSERT INTO items VALUES (1,1,1,'5551','2018-11-09',NULL,'CLIB',0.00,0.00,'2018-
   </datafield>
 </record>
 
-</collection>',NULL,'0',NULL,NULL),(7,7,7,'0000018188','2018-11-09',NULL,'CLIB',0.00,0.00,'2018-11-09',NULL,'2018-11-09',NULL,-1,1,NULL,3,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CLIB',NULL,'2018-11-10 05:22:21','CART','CART',NULL,NULL,NULL,'FIC',NULL,'000','SNvH','<collection
+</collection>',NULL,'0',NULL,NULL),(7,7,7,'0000018188','2018-11-09',5555551112,'CLIB',0.00,0.00,'2018-11-09',NULL,'2018-11-09',NULL,-1,1,NULL,3,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CLIB',NULL,'2018-11-10 05:22:21','CART','CART',NULL,NULL,NULL,'FIC',NULL,'000','SNvH','<collection
   xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
   xsi:schemaLocation=\"http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd\"
   xmlns=\"http://www.loc.gov/MARC21/slim\">
@@ -322,7 +322,7 @@ INSERT INTO items VALUES (1,1,1,'5551','2018-11-09',NULL,'CLIB',0.00,0.00,'2018-
   </datafield>
 </record>
 
-</collection>',NULL,'0',NULL,NULL),(28,28,28,'2013328289-2013328290','2018-11-09',NULL,'CLIB',0.00,0.00,'2018-11-09',NULL,'2018-11-09',NULL,-1,1,NULL,3,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CLIB',NULL,'2018-11-10 05:22:21','CART','CART',NULL,NULL,NULL,'FIC',NULL,'000','SNvKC','<collection
+</collection>',NULL,'0',NULL,NULL),(28,28,28,'2013328289','2018-11-09',NULL,'CLIB',0.00,0.00,'2018-11-09',NULL,'2018-11-09',NULL,-1,1,NULL,3,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CLIB',NULL,'2018-11-10 05:22:21','CART','CART',NULL,NULL,NULL,'FIC',NULL,'000','SNvKC','<collection
   xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
   xsi:schemaLocation=\"http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd\"
   xmlns=\"http://www.loc.gov/MARC21/slim\">
@@ -742,7 +742,7 @@ INSERT INTO items VALUES (1,1,1,'5551','2018-11-09',NULL,'CLIB',0.00,0.00,'2018-
   </datafield>
 </record>
 
-</collection>',NULL,'0',NULL,NULL),(63,63,63,'9999000003, 9999000004, 9999000005, 9999000006, 9999000007, 9999000008, 9999000009, 9999000010, 9999000011','2018-11-09',NULL,'CLIB',0.00,0.00,'2018-11-09',NULL,'2018-11-09',NULL,-1,1,NULL,3,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CLIB',NULL,'2018-11-10 05:22:21','CART','CART',NULL,NULL,NULL,'FIC',NULL,'000','SnvpCS2','<collection
+</collection>',NULL,'0',NULL,NULL),(63,63,63,'9999000003','2018-11-09',NULL,'CLIB',0.00,0.00,'2018-11-09',NULL,'2018-11-09',NULL,-1,1,NULL,3,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CLIB',NULL,'2018-11-10 05:22:21','CART','CART',NULL,NULL,NULL,'FIC',NULL,'000','SnvpCS2','<collection
   xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
   xsi:schemaLocation=\"http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd\"
   xmlns=\"http://www.loc.gov/MARC21/slim\">
@@ -850,7 +850,7 @@ INSERT INTO items VALUES (1,1,1,'5551','2018-11-09',NULL,'CLIB',0.00,0.00,'2018-
   </datafield>
 </record>
 
-</collection>',NULL,'0',NULL,NULL),(72,72,72,'9999000012, 9999000013, 9999000014, 9999000015, 9999000016, 9999000017','2018-11-09',NULL,'CLIB',0.00,0.00,'2018-11-09',NULL,'2018-11-09',NULL,-1,1,NULL,3,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CLIB',NULL,'2018-11-10 05:22:21','CART','CART',NULL,NULL,NULL,'FIC',NULL,'000','SnvpCS2','<collection
+</collection>',NULL,'0',NULL,NULL),(72,72,72,'9999000012','2018-11-09',NULL,'CLIB',0.00,0.00,'2018-11-09',NULL,'2018-11-09',NULL,-1,1,NULL,3,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CLIB',NULL,'2018-11-10 05:22:21','CART','CART',NULL,NULL,NULL,'FIC',NULL,'000','SnvpCS2','<collection
   xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
   xsi:schemaLocation=\"http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd\"
   xmlns=\"http://www.loc.gov/MARC21/slim\">
@@ -1090,7 +1090,7 @@ INSERT INTO items VALUES (1,1,1,'5551','2018-11-09',NULL,'CLIB',0.00,0.00,'2018-
   </datafield>
 </record>
 
-</collection>',NULL,'0',NULL,NULL),(92,92,92,'2065392005, 2065402005, 2065412005','2018-11-09',NULL,'CLIB',0.00,0.00,'2018-11-09',NULL,'2018-11-09',NULL,-1,1,NULL,3,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CLIB',NULL,'2018-11-10 05:22:21','CART','CART',NULL,NULL,NULL,'FIC',NULL,'000','SNvKB','<collection
+</collection>',NULL,'0',NULL,NULL),(92,92,92,'2065392005','2018-11-09',NULL,'CLIB',0.00,0.00,'2018-11-09',NULL,'2018-11-09',NULL,-1,1,NULL,3,NULL,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'CLIB',NULL,'2018-11-10 05:22:21','CART','CART',NULL,NULL,NULL,'FIC',NULL,'000','SNvKB','<collection
   xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
   xsi:schemaLocation=\"http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd\"
   xmlns=\"http://www.loc.gov/MARC21/slim\">
