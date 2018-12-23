@@ -92,7 +92,7 @@ for row in data:
     # call no
     tmp.append("")
     # items type 942$c
-    tmp.append("")
+    tmp.append("BK")
     result.append(tmp)
 
 import codecs
