@@ -14,6 +14,8 @@ for row in data:
     tmp.append(row[0])
     # khpl
     tmp.append(row[1])
+    # book no
+    tmp.append("")
     # author
     tmp.append(row[4])
     # title
